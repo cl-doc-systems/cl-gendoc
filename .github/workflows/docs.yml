@@ -30,8 +30,12 @@ jobs:
         run: |
           ros install 40ants/cl-info
           cl-info
+      - name: Install Qlot
+        run: ros install qlot
+      - name: Install Dependencies
+        run: qlot install
       - name: Build docs
-        run: /home/runner/.local/bin/pipenv run docs/scripts/build.ros
+        run: qlot exec docs/scripts/build.ros
         env:
           # This token is automaticall added to the secrets
           # by GitHub. Read more here:
