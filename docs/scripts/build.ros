@@ -66,13 +66,13 @@ behaviour could be overriden by keyword argument ``:raise t``."
 
 (defun gh-pages-repository-initialized-p ()
   "Checks if repository for documentation already initialized"
-  (uiop:directory-exists-p "docs/build/html/.git"))
+  (uiop:directory-exists-p "docs/build/.git"))
 
 
 (defun git (&rest commands)
   "Calls git command in gh-pages repository."
   
-  (let ((directory "docs/build/html/"))
+  (let ((directory "docs/build/"))
     (uiop:with-current-directory (directory)
       (let ((command (apply #'concatenate 'string
                             "git "
