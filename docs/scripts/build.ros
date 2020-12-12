@@ -5,7 +5,6 @@ exec ros -Q -- $0 "$@"
 |#
 (progn ;;init forms
   (ros:ensure-asdf)
-  #+quicklisp
   (ql:quickload '(log4cl
                   example-docs)
                 :silent t))

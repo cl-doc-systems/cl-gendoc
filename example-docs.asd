@@ -1,6 +1,7 @@
 (defsystem example-docs
-  :defsystem-depends-on ("cl-gendoc")
+  :class :package-inferred-system
   :pathname "docs/scripts/"
+  :license "Unlicense"
   :depends-on ("example-docs/builder"))
 
 
