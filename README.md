@@ -8,4 +8,4 @@ The goal is make it easier for CL software developers to choose proper documenta
 
 Resulting documentation can be viewed here:
 
-https://cl-doc-systems.github.io/cl-gendoc
+https://cl-doc-systems.github.io/cl-gendoc/
