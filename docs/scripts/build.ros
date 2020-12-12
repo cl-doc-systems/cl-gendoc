@@ -6,7 +6,8 @@ exec ros -Q -- $0 "$@"
 (progn ;;init forms
   (ros:ensure-asdf)
   #+quicklisp
-  (ql:quickload '(log4cl)
+  (ql:quickload '(log4cl
+                  example-docs)
                 :silent t))
 
 (defpackage :script.build-docs
@@ -159,4 +160,5 @@ behaviour could be overriden by keyword argument ``:raise t``."
                           (uiop:print-condition-backtrace condition :stream *error-output*)
                           (uiop:quit 1))))
     (build-docs)
-    (push-gh-pages)))
+    (when (uiop:getenv "GITHUB_ACTIONS")
+      (push-gh-pages))))
